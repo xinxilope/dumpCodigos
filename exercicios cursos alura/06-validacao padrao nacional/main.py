@@ -1,6 +1,7 @@
 from telefones import Telefone
 from documento import Documento
 from datas import DatasBr
+from acesso_cep import BuscaEndereco
 
 
 #TESTANDO CLASSES
@@ -21,3 +22,8 @@ print("")
 data1 = DatasBr()
 
 print(data1)
+print("")
+
+cep1 = BuscaEndereco(25870146)
+
+print(cep1)
