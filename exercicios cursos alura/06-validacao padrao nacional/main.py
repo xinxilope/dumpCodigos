@@ -24,6 +24,8 @@ data1 = DatasBr()
 print(data1)
 print("")
 
-cep1 = BuscaEndereco(25870146)
+cep1 = BuscaEndereco("01001000")
 
 print(cep1)
+
+cep1.acessa_via_cep()
