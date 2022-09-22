@@ -1,5 +1,4 @@
-from validate_docbr import CPF
-from validate_docbr import CNPJ
+from validate_docbr import CPF, CNPJ
 
 #########################################################
 #########################################################
