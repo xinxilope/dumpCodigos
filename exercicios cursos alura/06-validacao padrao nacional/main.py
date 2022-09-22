@@ -1,6 +1,11 @@
-from Cpf import Cpf
+from Cpf_Cnpj import CpfCnpj
 
-cpf1 = Cpf(12345678901)
 
-print(cpf1)
+#TESTANDO CLASSES
+pessoa1 = CpfCnpj('01234567890', "cpf")
+pessoa2 = CpfCnpj('81188463000120', "cnpj")
+
+print(pessoa1)
+print(pessoa2)
+
 
