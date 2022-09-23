@@ -1,4 +1,5 @@
 from datetime import date
+from operator import truediv
 
 class Funcionario:
     def __init__(self, nome, data_nascimento, salario):
@@ -25,11 +26,17 @@ class Funcionario:
         nome_quebrado = nome_completo.split(" ")
         return nome_quebrado[-1]
 
-    def decrescimo_salario(self):
+    def _verifica_diretor(self):
         sobrenomes = ['Bragança', 'Windsor', 'Bourbon', 'Yamato', 'Al Saud', 'Khan', 'Tudor', 'Ptolomeu']
-        if self._salario >= 100000 and (self.sobrenome() in sobrenomes):
-            decrescimo = self._salario * 0.1
-            self._salario = self._salario - decrescimo
+        return self._salario >= 100000 and (self.sobrenome() in sobrenomes)
+
+    def _calcula_decrescimo(self):
+        decrescimo = self._salario * 0.1
+        return decrescimo
+
+    def decrescimo_salario(self):
+        if self._verifica_diretor():
+            self._salario = self._salario - self._calcula_decrescimo()
 
     def calcular_bonus(self):
         valor = self._salario * 0.1
