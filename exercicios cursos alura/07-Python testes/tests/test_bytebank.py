@@ -31,13 +31,14 @@ class TestClass:
 
     def test_quando_decrescimo_salario_recebe_100k_deve_retornar_90k(self):
         #Given
-        entrada = 100000
+        entrada_salario = 100000
+        entrada_nome = "Paulo Bragança"
         esperado = 90000
-
-        funcionario_teste = Funcionario("mateus eduardo", "02/08/2000", entrada)
+        funcionario_teste = Funcionario(entrada_nome, "02/08/2000", entrada_salario)
 
         #When
-        result = funcionario_teste.decrescimo_salario()
+        funcionario_teste.decrescimo_salario()
+        result = funcionario_teste.salario
 
         #Then
         assert result == esperado
