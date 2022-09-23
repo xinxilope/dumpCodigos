@@ -7,6 +7,7 @@ class Funcionario:
         self._data_nascimento = data_nascimento
         self._salario = salario
 
+#GETTERS
     @property
     def nome(self):
         return self._nome
@@ -15,6 +16,7 @@ class Funcionario:
     def salario(self):
         return self._salario
 
+#METODOS
     def idade(self):
         data_quebrada = self._data_nascimento.split("/")
         ano_nasc = data_quebrada[-1]
@@ -26,6 +28,17 @@ class Funcionario:
         nome_quebrado = nome_completo.split(" ")
         return nome_quebrado[-1]
 
+    def decrescimo_salario(self):
+        if self._verifica_diretor():
+            self._salario = self._salario - self._calcula_decrescimo()
+
+    def calcular_bonus(self):
+        valor = self._salario * 0.1
+        if valor > 1000:
+            raise Exception("salario nao é elegivel a bonus")
+        return valor
+
+#METODOS PRIVADOS
     def _verifica_diretor(self):
         sobrenomes = ['Bragança', 'Windsor', 'Bourbon', 'Yamato', 'Al Saud', 'Khan', 'Tudor', 'Ptolomeu']
         return self._salario >= 100000 and (self.sobrenome() in sobrenomes)
@@ -34,15 +47,6 @@ class Funcionario:
         decrescimo = self._salario * 0.1
         return decrescimo
 
-    def decrescimo_salario(self):
-        if self._verifica_diretor():
-            self._salario = self._salario - self._calcula_decrescimo()
-
-    def calcular_bonus(self):
-        valor = self._salario * 0.1
-        if valor > 1000:
-            valor = 0
-        return valor
-
+#METODO PARA REPRESENTACAO
     def __str__(self):
         return f'Funcionario({self._nome}, {self._data_nascimento}, {self._salario})'
