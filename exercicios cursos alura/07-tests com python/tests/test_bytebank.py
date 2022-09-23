@@ -73,16 +73,3 @@ class TestClass:
             #Then
             assert result
 #########################
-
-    def test_printar_objeto(self):
-        with pytest.raises(Exception):
-            #Given
-            nome, data, salario = "teste", "02/08/2000", 1000
-            esperado = 'Funcionario(teste, 02/08/2000, 1000)'
-            funcionario_teste = Funcionario(nome, data, salario)
-
-            #When
-            result = print(funcionario_teste)
-
-            #Then
-            assert result == esperado
