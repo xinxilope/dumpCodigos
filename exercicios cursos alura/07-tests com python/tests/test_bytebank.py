@@ -3,6 +3,7 @@ import pytest
 from pytest import mark
 
 class TestClass:
+    @mark.idade
     def test_quando_idade_recebe_02_08_2000_deve_retornar_22(self):
         #Given
         entrada = '02/08/2000'
@@ -16,6 +17,7 @@ class TestClass:
         #Then
         assert result == esperado
 
+    @mark.sobrenome
     def test_quando_tiver_nome_completo_retornar_sobrenome(self):
         #Given
         entrada = "mateus eduardo"
@@ -29,6 +31,7 @@ class TestClass:
         #Then
         assert result == esperado
 
+    @mark.decrescimo
     def test_quando_decrescimo_salario_recebe_100k_deve_retornar_90k(self):
         #Given
         entrada_salario = 100000
