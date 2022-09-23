@@ -13,3 +13,16 @@ class TestClass:
 
         #Then
         assert result == esperado
+
+    def test_quando_tiver_nome_completo_retornar_sobrenome(self):
+        #Given
+        entrada = "mateus eduardo"
+        esperado = "eduardo"
+
+        funcionario_teste = Funcionario(entrada, "02/08/2000", 1500)
+
+        #When
+        result = funcionario_teste.sobrenome()
+
+        #Then
+        assert result == esperado
