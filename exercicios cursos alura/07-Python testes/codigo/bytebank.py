@@ -25,6 +25,10 @@ class Funcionario:
         nome_quebrado = nome_completo.split(" ")
         return nome_quebrado[-1]
 
+    def decrescimo_salario(self):
+        self._salario -= self._salario * 0.1
+        return self._salario
+
     def calcular_bonus(self):
         valor = self._salario * 0.1
         if valor > 1000:

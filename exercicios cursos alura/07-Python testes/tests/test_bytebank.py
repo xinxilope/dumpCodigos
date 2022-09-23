@@ -14,6 +14,7 @@ class TestClass:
         #Then
         assert result == esperado
 
+
     def test_quando_tiver_nome_completo_retornar_sobrenome(self):
         #Given
         entrada = "mateus eduardo"
@@ -23,6 +24,20 @@ class TestClass:
 
         #When
         result = funcionario_teste.sobrenome()
+
+        #Then
+        assert result == esperado
+
+
+    def test_quando_decrescimo_salario_recebe_100k_deve_retornar_90k(self):
+        #Given
+        entrada = 100000
+        esperado = 90000
+
+        funcionario_teste = Funcionario("mateus eduardo", "02/08/2000", entrada)
+
+        #When
+        result = funcionario_teste.decrescimo_salario()
 
         #Then
         assert result == esperado
