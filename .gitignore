@@ -46,6 +46,8 @@
 
 # CMake
 cmake-build-*/
+node_modules
+package-lock.json
 
 # Mongo Explorer plugin
 .idea/**/mongoSettings.xml
