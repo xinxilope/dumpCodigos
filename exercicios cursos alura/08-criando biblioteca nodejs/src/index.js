@@ -23,4 +23,6 @@ async function pegaArquivo(caminhoDoArquivo) {
     }
 }
 
+export default pegaArquivo
+
 pegaArquivo('./arquivos/texto.md')
